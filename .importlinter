@@ -1,0 +1,155 @@
+[importlinter]
+root_package = lisboa_pedala
+root_packages =
+    lisboa_pedala
+    gateway
+
+[importlinter:contract:no-cycles]
+name = Sem ciclos entre componentes
+type = independence
+modules =
+    lisboa_pedala.desbloqueio
+    lisboa_pedala.viagens
+    lisboa_pedala.tarifario
+    lisboa_pedala.faturacao
+    lisboa_pedala.pagamentos
+    lisboa_pedala.disponibilidade
+    lisboa_pedala.manutencao
+    lisboa_pedala.redistribuicao
+    lisboa_pedala.relatorios
+
+[importlinter:contract:desbloqueio]
+name = desbloqueio so importa de viagens, disponibilidade, shared
+type = forbidden
+source_modules =
+    lisboa_pedala.desbloqueio
+forbidden_modules =
+    lisboa_pedala.tarifario
+    lisboa_pedala.faturacao
+    lisboa_pedala.pagamentos
+    lisboa_pedala.manutencao
+    lisboa_pedala.redistribuicao
+    lisboa_pedala.relatorios
+    gateway
+
+[importlinter:contract:viagens]
+name = viagens so importa de tarifario, faturacao, shared
+type = forbidden
+source_modules =
+    lisboa_pedala.viagens
+forbidden_modules =
+    lisboa_pedala.desbloqueio
+    lisboa_pedala.disponibilidade
+    lisboa_pedala.manutencao
+    lisboa_pedala.redistribuicao
+    lisboa_pedala.relatorios
+    gateway
+
+[importlinter:contract:tarifario]
+name = tarifario so importa de shared
+type = forbidden
+source_modules =
+    lisboa_pedala.tarifario
+forbidden_modules =
+    lisboa_pedala.desbloqueio
+    lisboa_pedala.viagens
+    lisboa_pedala.faturacao
+    lisboa_pedala.pagamentos
+    lisboa_pedala.disponibilidade
+    lisboa_pedala.manutencao
+    lisboa_pedala.redistribuicao
+    lisboa_pedala.relatorios
+    gateway
+
+[importlinter:contract:faturacao]
+name = faturacao so importa de pagamentos, shared
+type = forbidden
+source_modules =
+    lisboa_pedala.faturacao
+forbidden_modules =
+    lisboa_pedala.desbloqueio
+    lisboa_pedala.viagens
+    lisboa_pedala.tarifario
+    lisboa_pedala.disponibilidade
+    lisboa_pedala.manutencao
+    lisboa_pedala.redistribuicao
+    lisboa_pedala.relatorios
+    gateway
+
+[importlinter:contract:pagamentos]
+name = pagamentos so importa de shared
+type = forbidden
+source_modules =
+    lisboa_pedala.pagamentos
+forbidden_modules =
+    lisboa_pedala.desbloqueio
+    lisboa_pedala.viagens
+    lisboa_pedala.tarifario
+    lisboa_pedala.faturacao
+    lisboa_pedala.disponibilidade
+    lisboa_pedala.manutencao
+    lisboa_pedala.redistribuicao
+    lisboa_pedala.relatorios
+    gateway
+
+[importlinter:contract:disponibilidade]
+name = disponibilidade so importa de shared
+type = forbidden
+source_modules =
+    lisboa_pedala.disponibilidade
+forbidden_modules =
+    lisboa_pedala.desbloqueio
+    lisboa_pedala.viagens
+    lisboa_pedala.tarifario
+    lisboa_pedala.faturacao
+    lisboa_pedala.pagamentos
+    lisboa_pedala.manutencao
+    lisboa_pedala.redistribuicao
+    lisboa_pedala.relatorios
+    gateway
+
+[importlinter:contract:manutencao]
+name = manutencao so importa de shared
+type = forbidden
+source_modules =
+    lisboa_pedala.manutencao
+forbidden_modules =
+    lisboa_pedala.desbloqueio
+    lisboa_pedala.viagens
+    lisboa_pedala.tarifario
+    lisboa_pedala.faturacao
+    lisboa_pedala.pagamentos
+    lisboa_pedala.disponibilidade
+    lisboa_pedala.redistribuicao
+    lisboa_pedala.relatorios
+    gateway
+
+[importlinter:contract:redistribuicao]
+name = redistribuicao so importa de disponibilidade, shared
+type = forbidden
+source_modules =
+    lisboa_pedala.redistribuicao
+forbidden_modules =
+    lisboa_pedala.desbloqueio
+    lisboa_pedala.viagens
+    lisboa_pedala.tarifario
+    lisboa_pedala.faturacao
+    lisboa_pedala.pagamentos
+    lisboa_pedala.manutencao
+    lisboa_pedala.relatorios
+    gateway
+
+[importlinter:contract:relatorios]
+name = relatorios so importa de viagens, shared
+type = forbidden
+source_modules =
+    lisboa_pedala.relatorios
+forbidden_modules =
+    lisboa_pedala.desbloqueio
+    lisboa_pedala.tarifario
+    lisboa_pedala.faturacao
+    lisboa_pedala.pagamentos
+    lisboa_pedala.disponibilidade
+    lisboa_pedala.manutencao
+    lisboa_pedala.redistribuicao
+    gateway
