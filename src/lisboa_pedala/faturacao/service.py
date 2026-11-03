@@ -1,5 +1,4 @@
 from lisboa_pedala.shared.types import DadosFatura
-from lisboa_pedala.pagamentos import service as pagamentos
 
 
 def emitir(dados: DadosFatura) -> str:

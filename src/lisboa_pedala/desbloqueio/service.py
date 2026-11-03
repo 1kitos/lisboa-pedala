@@ -1,7 +1,20 @@
-from lisboa_pedala.viagens import service as viagens
-from lisboa_pedala.disponibilidade import service as disponibilidade
+from fastapi import APIRouter
+from pydantic import BaseModel
+from lisboa_pedala.desbloqueio import service
+
+router = APIRouter()
 
 
-def desbloquear(utilizador_id: str, bicicleta_id: str,
-                doca_id: str) -> dict:
-    raise NotImplementedError
+class PedidoDesbloqueio(BaseModel):
+    utilizador_id: str
+    bicicleta_id: str
+    doca_id: str
+
+
+@router.post("/desbloquear")
+def desbloquear(pedido: PedidoDesbloqueio):
+    return service.desbloquear(
+        pedido.utilizador_id,
+        pedido.bicicleta_id,
+        pedido.doca_id
+    )

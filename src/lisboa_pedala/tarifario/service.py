@@ -1,11 +1,12 @@
+
 from lisboa_pedala.shared.types import DuracaoMinutos
 import math
 
 
 MINUTOS_GRATIS_ASSINANTE = 45
-PRECO_BLOCO_15MIN_ASSINANTE = 0.50  # euros
-PRECO_POR_VIAGEM_OCASIONAL = 2.00   # euros base
-PRECO_BLOCO_15MIN_OCASIONAL = 1.00  # euros
+PRECO_BLOCO_15MIN_ASSINANTE = 0.50
+PRECO_POR_VIAGEM_OCASIONAL = 2.00
+PRECO_BLOCO_15MIN_OCASIONAL = 1.00
 
 
 def calcular(duracao: DuracaoMinutos, tipo_utilizador: str) -> float:
