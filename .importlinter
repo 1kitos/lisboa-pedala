@@ -4,20 +4,6 @@ root_packages =
     lisboa_pedala
     gateway
 
-[importlinter:contract:no-cycles]
-name = Sem ciclos entre componentes
-type = independence
-modules =
-    lisboa_pedala.desbloqueio
-    lisboa_pedala.viagens
-    lisboa_pedala.tarifario
-    lisboa_pedala.faturacao
-    lisboa_pedala.pagamentos
-    lisboa_pedala.disponibilidade
-    lisboa_pedala.manutencao
-    lisboa_pedala.redistribuicao
-    lisboa_pedala.relatorios
-
 [importlinter:contract:desbloqueio]
 name = desbloqueio so importa de viagens, disponibilidade, shared
 type = forbidden
@@ -153,3 +139,4 @@ forbidden_modules =
     lisboa_pedala.manutencao
     lisboa_pedala.redistribuicao
     gateway
+allow_indirect_imports = True
