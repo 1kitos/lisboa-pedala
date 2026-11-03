@@ -27,3 +27,12 @@ C4Context
     Rel(navegante, lp, "Autentica assinantes", "HTTP/simulado")
     Rel(docas, lp, "Envia eventos e telemetria", "HTTP/simulado")
 ```
+
+## Legenda
+
+| Elemento | Descrição |
+|---|---|
+| 🧍 Pessoa (azul) | Utilizador humano do sistema |
+| ▭ Sistema (azul escuro) | O sistema Lisboa Pedala |
+| ▭ Sistema externo (cinzento) | Sistema fora do âmbito da solução |
+| → Relação | Interação entre elementos; etiqueta indica protocolo |
