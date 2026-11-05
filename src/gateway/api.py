@@ -1,7 +1,8 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
 from typing import List, Optional
-from gateway import service
+from . import service
+
 
 router = APIRouter()
 
@@ -47,6 +48,5 @@ def receber_avaria(evento: EventoAvaria):
 
 @router.post("/reenvio-offline")
 def reenvio_offline(payload: ReenvioOffline):
-    """US-3: doca reenvia eventos acumulados offline."""
     return service.processar_reenvio_offline(
         [e.dict() for e in payload.eventos])

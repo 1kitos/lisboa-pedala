@@ -29,10 +29,9 @@ C4Context
 ```
 
 ## Legenda
-
 | Elemento | Descrição |
 |---|---|
-| 🧍 Pessoa (azul) | Utilizador humano do sistema |
-| ▭ Sistema (azul escuro) | O sistema Lisboa Pedala |
-| ▭ Sistema externo (cinzento) | Sistema fora do âmbito da solução |
-| → Relação | Interação entre elementos; etiqueta indica protocolo |
+| Pessoa | Utilizador humano do sistema |
+| Sistema | O sistema Lisboa Pedala |
+| Sistema externo | Sistema fora do âmbito da solução |
+| Relação | Interação entre elementos; etiqueta indica protocolo |

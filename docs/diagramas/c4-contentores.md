@@ -21,3 +21,12 @@ C4Container
     Rel(api, at, "Envia faturas", "HTTP")
     Rel(api, mbway, "Processa pagamentos", "HTTP/simulado")
 ```
+
+## Legenda
+| Elemento | Descrição |
+|---|---|
+| Pessoa | Utilizador humano do sistema |
+| Contentor | Processo ou aplicação deployável |
+| Base de dados | Armazenamento persistente |
+| Sistema externo | Sistema fora do âmbito da solução |
+| Relação | Comunicação entre contentores; etiqueta indica tecnologia |

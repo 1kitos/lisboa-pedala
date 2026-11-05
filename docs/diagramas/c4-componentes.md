@@ -34,3 +34,10 @@ C4Component
     Rel(dis, db, "lê/escreve")
     Rel(man, db, "lê/escreve")
 ```
+
+## Legenda
+| Elemento | Descrição |
+|---|---|
+| Componente | Módulo Python com responsabilidade de domínio única |
+| Contentor externo | Processo separado ou base de dados |
+| Relação | Dependência de importação ou chamada de função |
