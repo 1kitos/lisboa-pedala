@@ -39,7 +39,10 @@ CODEOWNERS
 ```bash
 cd src
 pip install fastapi uvicorn import-linter pytest
-uvicorn lisboa_pedala.main:app --reload
+python -m pip install --user import-linter
+
+
+python uvicorn lisboa_pedala.main:app --reload
 ```
 
 Swagger disponível em `http://localhost:8000/docs`.
@@ -48,6 +51,7 @@ Swagger disponível em `http://localhost:8000/docs`.
 
 ```bash
 # na raiz do projecto
+$env:PATH += ";$env:APPDATA\Python\Python314\Scripts"
 lint-imports
 ```
 
