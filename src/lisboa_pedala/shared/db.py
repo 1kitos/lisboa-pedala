@@ -1,5 +1,21 @@
 import sqlite3
 from contextlib import contextmanager
+from dataclasses import dataclass
+from datetime import datetime
+
+
+
+DuracaoMinutos = int
+
+@dataclass
+class DadosFatura:
+    viagem_id: str
+    utilizador_id: str
+    duracao_minutos: DuracaoMinutos
+    tipo_utilizador: str  # "assinante" | "ocasional"
+    valor_euros: float
+    timestamp_inicio: datetime
+    timestamp_fim: datetime
 
 DB_PATH = "lisboa_pedala.db"
 

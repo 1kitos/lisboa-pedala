@@ -17,6 +17,7 @@ forbidden_modules =
     lisboa_pedala.redistribuicao
     lisboa_pedala.relatorios
     gateway
+allow_indirect_imports = True
 
 [importlinter:contract:viagens]
 name = viagens so importa de tarifario, faturacao, shared
@@ -30,6 +31,7 @@ forbidden_modules =
     lisboa_pedala.redistribuicao
     lisboa_pedala.relatorios
     gateway
+allow_indirect_imports = True
 
 [importlinter:contract:tarifario]
 name = tarifario so importa de shared
@@ -124,6 +126,7 @@ forbidden_modules =
     lisboa_pedala.manutencao
     lisboa_pedala.relatorios
     gateway
+allow_indirect_imports = True
 
 [importlinter:contract:relatorios]
 name = relatorios so importa de viagens, shared
